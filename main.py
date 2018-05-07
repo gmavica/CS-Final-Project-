@@ -33,19 +33,18 @@ clock = pygame.time.Clock()
 #times the FPS of the game
 
 
-playerZIMG = pygame.image.load('zlatan1animated.png')
+playerZIMG = pygame.image.load('C:/Users/Gianluca.Mavica19/OneDrive - Bellarmine College Preparatory/Desktop/2018 S2/Intro_to_CS/Mavica_Gianluca/final project/zlatan1animated.png')
 #changed the name, for my game; loads up the image, gets it ready
-def defenders(defenderx, defendery):
+def player(x,y):
+    #defines the player function 
+    gameDisplay.blit(playerZIMG,(x,y)) 
+    #puts the image at x,y
+
+#def defenders(defenderx, defendery):
     #put the defenders at a x,y location
 
 
-def player(x,y):
-    #defines the player function 
-    gameDisplay.blit((playerZIMG), (x,y)) 
-    #puts the image at x,y
-
-
-def text_objects(text, font)
+def text_objects(text, font):
     #defines the object text_objects
     textSurface = font.render(Text, True, black)
     #makes the text surface able to be used and makes it black
@@ -88,11 +87,11 @@ def game_loop():
     x_change = 0
     #varibale to change the location of the car
 
-defenders_startx = random.randrange(0 display_width)
+    defenders_startx = random.randrange(0, display_width)
 #makes the defenders start anywhere between the far left and far right of the screen
-defenders_starty = random.range-600
+    defenders_starty = random.range-600
 #makes the defenders appear off screen 600 pixles before they go on the real screen so they dont just randomly pop up
-defender_speed = 7
+    defender_speed = 7
 #makes the defenders move 7 pixles per seccond
 
     gameExit = False
@@ -138,10 +137,11 @@ defender_speed = 7
         player(x,y)
         #puts the player/image at x,y
 
-        if x > 600 - player_width or x > 300
+        if x > 600 - player_width or x > 300:
+            pygame.quit()
             #if this happens, need to fingure out how to make the car stop moveing 
 
-        if defenders_starty > display_height
+        if defenders_starty > display_height:
             #if the defender is off the screen then:
             defenders_starty = 0 - defenders_height
             #after a block goes off the screen, the next one imediatly shows up 
@@ -152,6 +152,7 @@ defender_speed = 7
         #updates the entire window 
         clock.tick(60)
         #how many FPS the game will run 
+
 
 game_loop()
 #actualy runs the function "game_loop"
